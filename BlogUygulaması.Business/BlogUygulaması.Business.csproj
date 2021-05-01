@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ValidationRules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogUygulaması.DataAccess\BlogUygulaması.DataAccess.csproj" />
+    <ProjectReference Include="..\BlogUygulaması.Entities\BlogUygulaması.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
