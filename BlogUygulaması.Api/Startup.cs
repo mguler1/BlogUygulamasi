@@ -39,6 +39,7 @@ namespace BlogUygulaması.Api
             }
 
             app.UseRouting();
+            app.UseStaticFiles();//wwwroot  dışarı açma
 
             app.UseAuthorization();
 
