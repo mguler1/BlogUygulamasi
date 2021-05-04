@@ -2,11 +2,8 @@
 using BlogUygulaması.Business.Interfaces;
 using BlogUygulaması.Dto.DTOs.CategoryDto;
 using BlogUygulaması.Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BlogUygulaması.Api.Controllers
