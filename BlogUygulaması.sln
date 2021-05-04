@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogUygulaması.DataAccess"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogUygulaması.Business", "BlogUygulaması.Business\BlogUygulaması.Business.csproj", "{F089A39E-4221-48AC-ACE7-006A1E9E690B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogUygulaması.Api", "BlogUygulaması.Api\BlogUygulaması.Api.csproj", "{3C97A7CA-6026-48F0-B283-D7D7C628D149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogUygulaması.Api", "BlogUygulaması.Api\BlogUygulaması.Api.csproj", "{3C97A7CA-6026-48F0-B283-D7D7C628D149}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogUygulaması.Dto", "BlogUygulaması.Dto\BlogUygulaması.Dto.csproj", "{228E97B3-0A21-4CA4-BCB3-38990083D5D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogUygulaması.Dto", "BlogUygulaması.Dto\BlogUygulaması.Dto.csproj", "{228E97B3-0A21-4CA4-BCB3-38990083D5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogUygulaması.Web", "BlogUygulaması.Web\BlogUygulaması.Web.csproj", "{7C070F5C-4836-4BE9-B537-BC0B503F2E04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{228E97B3-0A21-4CA4-BCB3-38990083D5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{228E97B3-0A21-4CA4-BCB3-38990083D5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{228E97B3-0A21-4CA4-BCB3-38990083D5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C070F5C-4836-4BE9-B537-BC0B503F2E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C070F5C-4836-4BE9-B537-BC0B503F2E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C070F5C-4836-4BE9-B537-BC0B503F2E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C070F5C-4836-4BE9-B537-BC0B503F2E04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
