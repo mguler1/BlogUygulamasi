@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogUygulaması.Web.ApiServices.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,14 @@ namespace BlogUygulaması.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IBlogApiService _blogApiService;
+        public HomeController(IBlogApiService blogApiService)
         {
-            return View();
+            _blogApiService = blogApiService;
+        }
+        public async Task <IActionResult> Index()
+        {
+            return View(await _blogApiService.GetAllAsync());
         }
     }
 }
