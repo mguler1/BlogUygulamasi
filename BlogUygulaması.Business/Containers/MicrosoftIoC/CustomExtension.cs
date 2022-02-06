@@ -1,5 +1,6 @@
 ﻿using BlogUygulaması.Business.Concrete;
 using BlogUygulaması.Business.Interfaces;
+using BlogUygulaması.Business.Tools.JWTTool;
 using BlogUygulaması.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using BlogUygulaması.DataAccess.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +22,11 @@ namespace BlogUygulaması.Business.Containers.MicrosoftIoC
 
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EfCategoryRepository>();
+
+            services.AddScoped<IAppUserService, AppUserManager>();
+            services.AddScoped<IAppUserDal, EfAppUserRepository>();
+
+            services.AddScoped<IJwtService, JwtManager>();
         }
     }
 }

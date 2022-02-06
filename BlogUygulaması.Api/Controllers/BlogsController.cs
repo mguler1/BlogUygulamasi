@@ -4,6 +4,7 @@ using BlogUygulaması.Api.Models;
 using BlogUygulaması.Business.Interfaces;
 using BlogUygulaması.Dto.DTOs.BlogDto;
 using BlogUygulaması.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -36,6 +37,7 @@ namespace BlogUygulaması.Api.Controllers
             return Ok(_mapper.Map<BlogListDto>(await _blogService.FindByIdAsync(id)));
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create([FromForm] BlogAddModel blogAddModel)
         {
 
@@ -59,6 +61,7 @@ namespace BlogUygulaması.Api.Controllers
 
         }
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, [FromForm] BlogUpdateModel blogUpdateModel)
         {
             if (id != blogUpdateModel.Id)
@@ -93,6 +96,7 @@ namespace BlogUygulaması.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.RemoveAsync(new Blog { Id = id });

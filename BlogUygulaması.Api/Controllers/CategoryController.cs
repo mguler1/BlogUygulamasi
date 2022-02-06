@@ -2,6 +2,7 @@
 using BlogUygulaması.Business.Interfaces;
 using BlogUygulaması.Dto.DTOs.CategoryDto;
 using BlogUygulaması.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -29,12 +30,14 @@ namespace BlogUygulaması.Api.Controllers
             return Ok(_mapper.Map<CategoryListDto>(await _categoryService.FindByIdAsync(id)));
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(CategoryAddDto categoryAddDto)
         {
           await  _categoryService.AddAsync(_mapper.Map<Category> (categoryAddDto));
             return Created("", categoryAddDto);
         }
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id ,CategoryUpdateDto categoryUpdateDto)
         {
             if (id!=categoryUpdateDto.Id)
@@ -43,6 +46,7 @@ namespace BlogUygulaması.Api.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _categoryService.RemoveAsync(new Category { Id = id });
