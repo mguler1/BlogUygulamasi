@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogUygulaması.DataAccess\BlogUygulaması.DataAccess.csproj" />
+    <ProjectReference Include="..\BlogUygulaması.Dto\BlogUygulaması.Dto.csproj" />
     <ProjectReference Include="..\BlogUygulaması.Entities\BlogUygulaması.Entities.csproj" />
   </ItemGroup>
 

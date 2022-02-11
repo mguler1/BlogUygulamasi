@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlogUygulaması.Dto.DTOs.AppUserDto
 {
-   public class LoginDto:IDto
+   public class LogInDto:IDto
     {
         public string UserName { get; set; }
         public string Password { get; set; }
