@@ -3,6 +3,7 @@ using BlogUygulaması.Api.Enums;
 using BlogUygulaması.Api.Models;
 using BlogUygulaması.Business.Interfaces;
 using BlogUygulaması.Dto.DTOs.BlogDto;
+using BlogUygulaması.Dto.DTOs.CategoryBlogDtos;
 using BlogUygulaması.Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -102,5 +103,20 @@ namespace BlogUygulaması.Api.Controllers
             await _blogService.RemoveAsync(new Blog { Id = id });
             return NoContent();
         }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> AddToCategory(CategoryBlogDto  categoryBlogDto)
+        {
+            await _blogService.AddToCategoryAsync(categoryBlogDto);
+            return Created("", categoryBlogDto);
+        }
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> RemoveFromToCategory(CategoryBlogDto categoryBlogDto)
+        {
+            await _blogService.RemoveFromCategoryAsync(categoryBlogDto);
+            return NoContent();
+        }
+
     }
+
 }
