@@ -9,5 +9,6 @@ namespace BlogUygulaması.Business.Interfaces
     public interface ICategoryService :IGenericService<Category>
     {
         Task<List<Category>> GetAllSortedByIdAsync();
+        Task<List<Category>> GetWithCategoryBlogsAsync();
     }
 }

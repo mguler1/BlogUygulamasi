@@ -1,4 +1,5 @@
-﻿using BlogUygulaması.Business.Interfaces;
+﻿using BlogUygulaması.Api.CustomFilters;
+using BlogUygulaması.Business.Interfaces;
 using BlogUygulaması.Business.Tools.JWTTool;
 using BlogUygulaması.Dto.DTOs.AppUserDto;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +24,7 @@ namespace BlogUygulaması.Api.Controllers
             _jwtService = jwtService;
         }
         [HttpPost]
+        [ValidModel]
         public async Task<IActionResult> SingIn(LogInDto logInDto)
         {
            var user= await _appUserService.CheckUserAsync(logInDto);

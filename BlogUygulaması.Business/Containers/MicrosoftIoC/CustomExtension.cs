@@ -27,6 +27,7 @@ namespace BlogUygulaması.Business.Containers.MicrosoftIoC
             services.AddScoped<IAppUserDal, EfAppUserRepository>();
 
             services.AddScoped<IJwtService, JwtManager>();
+          
         }
     }
 }

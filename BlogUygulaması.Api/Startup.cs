@@ -1,3 +1,4 @@
+using BlogUygulaması.Api.CustomFilters;
 using BlogUygulaması.Business.Containers.MicrosoftIoC;
 using BlogUygulaması.Business.StringInfo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -31,6 +32,7 @@ namespace BlogUygulaması.Api
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
+            services.AddScoped(typeof(ValidId<>));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
             {
                 opt.RequireHttpsMetadata = false;
