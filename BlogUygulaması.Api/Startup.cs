@@ -1,6 +1,7 @@
 using BlogUygulaması.Api.CustomFilters;
 using BlogUygulaması.Business.Containers.MicrosoftIoC;
 using BlogUygulaması.Business.StringInfo;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,7 +50,7 @@ namespace BlogUygulaması.Api
             });
             services.AddControllers().AddNewtonsoftJson(opt=> {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });
+            }).AddFluentValidation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
