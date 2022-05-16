@@ -43,9 +43,9 @@ namespace BlogUygulaması.Api
                     ValidAudience = JwtInfo.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey)),
                     ValidateLifetime=true,
-                    ValidateAudience=true,
-                    ValidateIssuer = true,
-                    ClockSkew=TimeSpan.Zero,
+                    ValidateAudience=true,//Eğer jwt infodan gelmiyorsa doğrulama
+                    ValidateIssuer = true,//Eğer jwt infodan gelmiyorsa doğrulama
+                    ClockSkew =TimeSpan.Zero,//sunucu ile zaman farkı oluşturma
                 };
             });
             services.AddControllers().AddNewtonsoftJson(opt=> {
