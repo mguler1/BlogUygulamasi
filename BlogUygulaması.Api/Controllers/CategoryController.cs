@@ -66,7 +66,8 @@ namespace BlogUygulaması.Api.Controllers
             foreach (var item in categories)
             {
                 CategoryWithBlogsCountDto dto = new CategoryWithBlogsCountDto();
-                dto.Category = item;
+                dto.CategoryName = item.Name;
+                dto.CategoryId = item.Id;
                 dto.BlogsCount = item.categoryBlogs.Count;
                 listCategory.Add(dto);
             }
